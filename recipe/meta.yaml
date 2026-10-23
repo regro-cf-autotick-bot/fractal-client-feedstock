@@ -1,14 +1,14 @@
 {% set python_min = "3.11.0" %}
 {% set name = "fractal-client" %}
-{% set version = "2.23.1" %}
+{% set version = "2.24.1" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/fractal_client-{{ version }}.tar.gz
-  sha256: 5c9823b23bd50f4f7b1a1145347a9832763392a9e854c115d71c8d7446d6e33d
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/fractal_client-{{ version }}.tar.gz
+  sha256: 42dd2538edb88c313903925fa4e5d31e38bcc023081d89a90eb72abc10c0ab27
 
 build:
   noarch: python
@@ -23,11 +23,11 @@ requirements:
     - setuptools >=80.0
     - pip
   run:
-    - httpx2 >=2.4.0,<2.5.0
+    - httpx2 >=2.12.0,<2.13.0
     - python >={{ python_min }},<3.14.0
     - python-dotenv >=1.2.0,<1.3.0
     - httpx >=0.28.0,<0.29.0
-    - pyjwt >=2.8.0,<3.0.0
+    - pyjwt >=2.15.0,<3.0.0
     - packaging >=26.0.0,<27.0.0
 
 test:
